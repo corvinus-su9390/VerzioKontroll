@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MNBswap", "MNBswap.csproj", "{8CD6DD5B-0565-4ADD-B43F-85555CE12355}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CD6DD5B-0565-4ADD-B43F-85555CE12355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CD6DD5B-0565-4ADD-B43F-85555CE12355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CD6DD5B-0565-4ADD-B43F-85555CE12355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CD6DD5B-0565-4ADD-B43F-85555CE12355}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54D797E4-18E4-40FA-9CCB-4B248610EC1A}
+	EndGlobalSection
+EndGlobal
