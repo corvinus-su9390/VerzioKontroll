@@ -23,10 +23,7 @@ namespace SantaFactory.Abstractions
             DrawImage(e.Graphics);
         }
 
-        protected abstract void DrawImage(Graphics g)
-        {
-            g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
-        }
+        protected abstract void DrawImage(Graphics g);
 
         public void MoveToy()
         {

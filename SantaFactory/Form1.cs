@@ -1,4 +1,5 @@
-﻿using SantaFactory.Entities;
+﻿using SantaFactory.Abstractions;
+using SantaFactory.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace SantaFactory
 {
     public partial class Form1 : Form
     {
-        List<Ball> _balls = new List<Ball>();
+        List<Toy> _toys = new List<Toy>();
 
         private BallFactory _ballfactory;
 
@@ -21,6 +22,18 @@ namespace SantaFactory
         {
             get { return _ballfactory; }
             set { _ballfactory = value; }
+        }
+        private Toy _nextToy;
+
+        private IToyFactory _factory;
+        public IToyFactory Factory
+        {
+            get { return _factory; }
+            set
+            {
+                _factory = value;
+                DisplayNext();
+            }
         }
 
         public Form1()
@@ -32,29 +45,60 @@ namespace SantaFactory
 
         private void createTimer_Tick(object sender, EventArgs e)
         {
-            var ball = BallFactory.CreateNew();
-            _balls.Add(ball);
-            ball.Left = -ball.Width;
-            mainPanel.Controls.Add(ball);
+            Ball toy = (Ball)BallFactory.CreateNew();
+            _toys.Add(toy);
+            toy.Left = -toy.Width;
+            mainPanel.Controls.Add(toy);
 
         }
 
         private void conveyorTimer_Tick(object sender, EventArgs e)
         {
             var maxPosition = 0;
-            foreach (var ball in _balls)
+            foreach (var ball in _toys)
             {
-                ball.MoveBall();
+                ball.MoveToy();
                 if (ball.Left > maxPosition)
                     maxPosition = ball.Left;
             }
 
             if (maxPosition > 1000)
             {
-                var oldestBall = _balls[0];
+                var oldestBall = _toys[0];
                 mainPanel.Controls.Remove(oldestBall);
-                _balls.Remove(oldestBall);
+                _toys.Remove(oldestBall);
             }
+        }
+
+        private void carButton_Click(object sender, EventArgs e)
+        {
+            Factory = new CarFactory();
+        }
+
+        private void ballButton_Click(object sender, EventArgs e)
+        {
+            Factory = new BallFactory();
+        }
+
+        private void DisplayNext()
+        {
+            if (_nextToy != null)
+                Controls.Remove(_nextToy);
+            _nextToy = Factory.CreateNew();
+            _nextToy.Top = lblNext.Top + lblNext.Height + 20;
+            _nextToy.Left = lblNext.Left;
+            Controls.Add(_nextToy);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            var cd = new ColorDialog();
+
+            cd.Color = button.BackColor;
+            if (cd.ShowDialog() != DialogResult.OK)
+                return;
+            button.BackColor = cd.Color;
         }
     }
 }

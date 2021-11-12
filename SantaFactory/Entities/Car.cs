@@ -5,16 +5,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SantaFactory.Entities
 {
-    public class Ball : Abstractions.Toy
+    public class Car : Abstractions.Toy
     {
-        
         protected override void DrawImage(Graphics g)
         {
-            g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
+            var image = Image.FromFile(@"Images\car.png");
+            g.DrawImage(image, 0, 0, Width, Height);
         }
     }
 }
