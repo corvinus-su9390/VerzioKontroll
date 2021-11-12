@@ -77,7 +77,10 @@ namespace SantaFactory
 
         private void ballButton_Click(object sender, EventArgs e)
         {
-            Factory = new BallFactory();
+            Factory = new BallFactory()
+            {
+                BallColor = btnBallColor.BackColor
+            };
         }
 
         private void DisplayNext()
@@ -90,7 +93,7 @@ namespace SantaFactory
             Controls.Add(_nextToy);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBallColor_Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             var cd = new ColorDialog();
