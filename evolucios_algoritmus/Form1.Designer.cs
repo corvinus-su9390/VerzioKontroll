@@ -44,7 +44,7 @@ namespace evolucios_algoritmus
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(105, 3);
+            this.button1.Location = new System.Drawing.Point(150, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
