@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9E594B45-92D5-49EA-9681-C0DB08BC7BC0}</ProjectGuid>
+    <ProjectGuid>{6EBBC545-6562-4B3F-BF93-4F481FEEC29F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>evolucios_algoritmus</RootNamespace>
     <AssemblyName>evolucios_algoritmus</AssemblyName>
@@ -44,6 +44,10 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WorldsHardestGame, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\WorldsHardestGame.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -75,6 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libs\WorldsHardestGame.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
